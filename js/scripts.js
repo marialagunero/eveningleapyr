@@ -3,14 +3,15 @@ $(document).ready(function() {
     event.preventDefault();
 
     var leapYear = function(year) {
-    if ((year % 4 === 0) && (year % 100 !== 0)) {
-      return true;
-    } else {
-      return false;
-    }
-  };
+  if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
-  // jQuery user interface logic here.
+// jQuery user interface logic here.
+
     var year = parseInt($("input#year").val());
     var result = leapYear(year);
     $("#result").text(result);
